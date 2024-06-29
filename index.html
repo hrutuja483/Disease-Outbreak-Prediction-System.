@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flu Outbreak Prediction</title>
+</head>
+<body>
+    <h1>Flu Outbreak Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="season">Season:</label>
+        <input type="text" id="season" name="season"><br><br>
+        
+        <label for="region">Region:</label>
+        <input type="text" id="region" name="region"><br><br>
+        
+        <label for="influenza_category">Influenza Category:</label>
+        <input type="text" id="influenza_category" name="influenza_category"><br><br>
+        
+        <input type="submit" value="Predict">
+    </form>
+    <br>
+    <a href="/trends">View Trends</a>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>{{ prediction }}</p>
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flu Trends</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Flu Cases Trends by Region</h1>
+    <div>{{ graph_html|safe }}</div>
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
+
+
